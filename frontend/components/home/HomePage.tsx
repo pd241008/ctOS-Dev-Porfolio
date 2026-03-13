@@ -1,8 +1,8 @@
 "use client";
 
-import SystemCard from "@/components/ui/SystemCard";
+import SystemCard from "../ui/SystemCard";
 
-export default function Home() {
+export default function HomeTab() {
   return (
     <div className="animate-in fade-in zoom-in-95 duration-300 max-w-5xl mx-auto space-y-8 pb-12">
       <header className="border-b border-purple-500/30 pb-4 mb-8">
@@ -92,6 +92,7 @@ export default function Home() {
   );
 }
 
+// Moved the DeploymentRow helper here since it's only used on the HomeTab
 function DeploymentRow({
   name,
   status,

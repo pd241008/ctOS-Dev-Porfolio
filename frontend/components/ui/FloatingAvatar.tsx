@@ -12,7 +12,7 @@ export default function FloatingAvatar({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-6 right-6 z-[99999] flex flex-col items-end pointer-events-auto">
+    <div className="fixed top-6 right-6 z-99999 flex flex-col items-end pointer-events-auto">
       <button
         onClick={() => setMenuOpen(!menuOpen)}
         className="w-12 h-12 rounded-full border-2 border-purple-500 bg-zinc-950 flex items-center justify-center drop-shadow-[0_0_10px_rgba(168,85,247,0.5)] hover:bg-purple-900/40 transition-all cursor-pointer relative">
@@ -23,7 +23,7 @@ export default function FloatingAvatar({
       </button>
 
       {menuOpen && (
-        <div className="mt-4 w-64 bg-[#09090b] border border-purple-500/50 rounded-sm p-3 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)] animate-in slide-in-from-top-4 fade-in duration-200">
+        <div className="mt-4 w-64 bg-#09090b border border-purple-500/50 rounded-sm p-3 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)] animate-in slide-in-from-top-4 fade-in duration-200">
           <div className="text-purple-500 text-xs mb-2 border-b border-purple-500/30 pb-1">
             SYS_LOG // PREFERENCES
           </div>

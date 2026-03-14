@@ -64,7 +64,7 @@ export default function Terminal({ switchToGui }: TerminalProps) {
       <div className="pointer-events-auto w-full">
         <SystemWindow title="TERMINAL_EMULATOR">
           {/* Terminal Body - Forced Height */}
-          <div className="h-[28rem] bg-[#09090b] p-4 flex flex-col justify-start overflow-y-auto font-mono text-sm sm:text-base">
+          <div className="h-28rem bg-#09090b p-4 flex flex-col justify-start overflow-y-auto font-mono text-sm sm:text-base">
             <div className="space-y-2 mb-4">
               {history.map((line, i) => (
                 <div

@@ -68,7 +68,7 @@ export default function ToggleDashboard({
           <NavButton
             label="ARCHIVES"
             icon="[A]"
-            href="/archive"
+            href="/archives"
             isCollapsed={isCollapsed}
           />
           <NavButton
@@ -109,7 +109,7 @@ export default function ToggleDashboard({
         {/* TERMINAL OVERLAY - Removed background dark tint, made click-through */}
         <AnimatePresence>
           {isTerminal && !isTerminalMinimized && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.85, y: 20, rotateX: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10, rotateX: -5 }}
@@ -133,7 +133,7 @@ export default function ToggleDashboard({
         {/* RESTORE CLI BUTTON */}
         <AnimatePresence>
           {isTerminal && isTerminalMinimized && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}

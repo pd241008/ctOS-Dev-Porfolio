@@ -5,6 +5,8 @@ import BioOverview from "@/components/home/BioOverview";
 import GithubIntel from "@/components/home/GithubIntel";
 import ActiveDeployments from "@/components/home/ActiveDeployments";
 import ResourceMonitor from "@/components/home/ResourceMonitor";
+import ProductionTelemetry from "@/components/home/ProductionTelemetry";
+import LiveCommits from "@/components/home/LiveCommits";
 
 export default function Page() {
   return (
@@ -35,17 +37,17 @@ export default function Page() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <SystemCard title="NODE: BIOGRAPHIC_DATA">
-              <div className="p-1 bg-zinc-950/50 backdrop-blur-sm">
+              <div className="p-1 bg-zinc-950/50 backdrop-blur-sm h-full flex flex-col">
                 <BioOverview />
               </div>
             </SystemCard>
           </div>
 
-          <div className="lg:col-span-2">
-            <SystemCard title="NODE: TELEMETRY">
-              <div className="p-4 bg-zinc-950/50 h-full">
+          <div className="lg:col-span-3">
+            <SystemCard title="NODE: SKILL_ALLOCATION_MATRIX">
+              <div className="bg-zinc-950/50 h-full">
                 <ResourceMonitor />
               </div>
             </SystemCard>
@@ -64,6 +66,15 @@ export default function Page() {
 
         {/* Using a 6-column grid to allow a 4:2 ratio */}
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
+          {/* ACTIVE DEPLOYMENTS - Slimmer Side Block (2/6) */}
+          <div className="lg:col-span-2 group flex flex-col">
+            <SystemCard title="NODE: ACTIVE_UPLINKS">
+              <div className="p-4 lg:p-5 bg-zinc-950/40 h-full flex flex-col overflow-hidden group-hover:bg-purple-900/5 transition-colors">
+                <ActiveDeployments />
+              </div>
+            </SystemCard>
+          </div>
+          
           {/* GITHUB INTEL - Wide Block (4/6) */}
           <div className="lg:col-span-4 group transition-transform duration-300 flex flex-col">
             <SystemCard title="NODE: GITHUB_INTEL">
@@ -72,12 +83,31 @@ export default function Page() {
               </div>
             </SystemCard>
           </div>
+        </div>
+      </section>
 
-          {/* ACTIVE DEPLOYMENTS - Slimmer Side Block (2/6) */}
+      {/* SECTION 3: PRODUCTION SCALE OPERATIONS */}
+      <section className="space-y-6">
+        <div className="flex items-center gap-2 text-purple-400/80">
+          <span className="text-xs animate-pulse">⚡</span>
+          <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">
+            Production_Scale_Operations
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
+          <div className="lg:col-span-4 group transition-transform duration-300 flex flex-col">
+            <SystemCard title="NODE: PRODUCTION_TELEMETRY">
+              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-[300px] h-full group-hover:bg-purple-900/5 transition-colors">
+                <ProductionTelemetry />
+              </div>
+            </SystemCard>
+          </div>
+
           <div className="lg:col-span-2 group flex flex-col">
-            <SystemCard title="NODE: ACTIVE_UPLINKS">
-              <div className="p-4 lg:p-5 bg-zinc-950/40 h-full flex flex-col overflow-hidden group-hover:bg-purple-900/5 transition-colors">
-                <ActiveDeployments />
+            <SystemCard title="NODE: UPLINK_COMMITS">
+              <div className="bg-zinc-950/40 h-full flex flex-col min-h-[300px] max-h-[400px] overflow-hidden group-hover:bg-purple-900/5 transition-colors">
+                <LiveCommits />
               </div>
             </SystemCard>
           </div>

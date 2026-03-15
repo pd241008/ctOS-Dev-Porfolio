@@ -9,7 +9,7 @@ export default function SandboxTab() {
 
   // The fake terminal output sequence
   const installLogs = [
-    "> npx expresskit-core init",
+    "> npx @pd241008/expresskit init",
     "FETCHING REGISTRY DATA...",
     "RESOLVING DEPENDENCIES...",
     "INSTALLING EXPRESSKIT v1.0.4",
@@ -63,7 +63,7 @@ export default function SandboxTab() {
           <div className="p-6 bg-zinc-950 flex flex-col h-full min-h-64">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-purple-200 uppercase tracking-widest">
-                ExpressKit Core
+                ExpressKit CLI
               </h3>
               <p className="text-xs text-purple-400 uppercase tracking-widest mt-1">
                 Production-Ready Node.js Framework
@@ -98,7 +98,7 @@ export default function SandboxTab() {
 
             <div className="mt-8 pt-4 border-t border-purple-500/30">
               <a
-                href="https://www.npmjs.com/"
+                href="https://www.npmjs.com/package/@pd241008/expresskit"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-bold text-purple-400 hover:text-purple-200 uppercase tracking-widest transition-colors cursor-pointer">

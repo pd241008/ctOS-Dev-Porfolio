@@ -14,6 +14,9 @@ export default function BioOverview() {
           <p className="text-xs text-purple-400 uppercase tracking-widest mt-1">
             Backend-Focused Full Stack Developer
           </p>
+          <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">
+            Architecting robust backend systems, developer tooling, and scalable cloud infrastructure.
+          </p>
         </div>
       </div>
 
@@ -21,13 +24,15 @@ export default function BioOverview() {
         <p>&gt; B.Tech Computer Science (2023-2027) — SRM University</p>
 
         <p>
-          &gt; Technical Lead — Milan &apos;25 / &apos;26. Architecting
-          ticketing & platform infrastructure scaling to 4K+ users.
+          &gt; Technical Lead — Milan &apos;25 &amp; &apos;26 (SRM University). Architected and deployed the official festival ticketing platform (Next.js + Node.js), successfully scaling to handle 4K+ concurrent users.
         </p>
 
         <p>
-          &gt; Specializing in backend architecture, distributed systems,
-          developer tooling, and AI-powered applications.
+          &gt; Web Development Intern — CodeClause. Developed responsive web applications using HTML, CSS, JavaScript, and React.
+        </p>
+
+        <p>
+          &gt; Specializing in building production-grade applications using modern backend systems, cloud infrastructure, and machine learning.
         </p>
       </div>
 
@@ -38,15 +43,22 @@ export default function BioOverview() {
 
         <div className="flex flex-wrap gap-2">
           {[
-            "Next.js",
-            "Node.js",
-            "Express",
-            "FastAPI",
+            "JavaScript",
             "TypeScript",
             "Python",
-            "PostgreSQL",
+            "C++",
+            "Java",
+            "Next.js",
+            "React.js",
+            "Tailwind CSS",
+            "Node.js",
+            "Express.js",
+            "FastAPI",
             "MongoDB",
+            "PostgreSQL",
             "AWS EC2",
+            "PM2",
+            "Docker"
           ].map((tech) => (
             <span
               key={tech}

@@ -19,24 +19,35 @@ interface Project {
 // Mock Data structure
 const MAJOR_PROJECTS: Project[] = [
   {
-    id: "intellidoc",
-    title: "IntelliDoc-Query",
-    type: "AI Document Processing System",
+    id: "expresskit",
+    title: "ExpressKit CLI",
+    type: "Developer Tooling",
     description:
-      "Full-stack AI-powered document processing architecture. Implemented RAG (Retrieval-Augmented Generation) for highly accurate context extraction and querying.",
-    tags: ["LLMs", "Vector DB", "FastAPI", "React"],
-    status: "ACTIVE",
-    githubUrl: "#",
+      "Convention-driven backend scaffolding tool engineered to standardize Express.js microservice architecture. Reduces initialization time from hours to seconds via dynamic route discovery.",
+    tags: ["Node.js", "Express", "TypeScript", "CLI"],
+    status: "LIVE_ON_NPM",
+    githubUrl: "https://github.com/pd241008/ExpressKit",
+    liveUrl: "https://www.npmjs.com/package/@pd241008/expresskit",
+  },
+  {
+    id: "intellidoc",
+    title: "IntelliDoc Query Engine",
+    type: "AI & Search",
+    description:
+      "Full-stack document processing system. Utilizes Retrieval-Augmented Generation (RAG) to allow users to extract deep insights and query complex documents instantly.",
+    tags: ["LLMs", "Vector DB", "FastAPI", "Next.js"],
+    status: "BUILDING",
+    githubUrl: "https://github.com/pd241008/IntelliDoc-Query",
     liveUrl: "#",
   },
   {
-    id: "expresskit",
-    title: "ExpressKit Core",
-    type: "NPM Package // Backend Tooling",
+    id: "milan",
+    title: "Milan Core Platform",
+    type: "Event Infrastructure",
     description:
-      "Engineered a production-ready backend starter framework for Express.js. Published to NPM registry, abstracting boilerplate setup and standardizing API architectures.",
-    tags: ["Node.js", "Express", "NPM"],
-    status: "PUBLISHED",
+      "High-concurrency ticketing infrastructure architected for SRM University. Features dual-authentication flows, automated rate limiting, and AWS-backed deployment handling 4K+ active users.",
+    tags: ["Next.js", "Node.js", "AWS", "MongoDB"],
+    status: "STABLE_DEPLOYMENT",
     githubUrl: "#",
     liveUrl: "#",
   },
@@ -46,21 +57,45 @@ const MINOR_PROJECTS: Project[] = [
   {
     id: "aqi",
     title: "AQI Prediction Engine",
-    desc: "Machine learning pipeline for Air Quality Index forecasting using Scikit-Learn.",
-    tags: ["Python", "ML"],
+    desc: "Python and Next.js integration forecasting localized pollution levels. Currently optimizing the algorithmic accuracy to provide real-time carbon footprint reduction insights.",
+    tags: ["Machine Learning", "Python", "Next.js"],
+    githubUrl: "https://github.com/pd241008/AQI-Preditcion-Model",
+  },
+
+  {
+    id: "omega",
+    title: "Project: Omega",
+    desc: "Researching and designing a highly available, fault-tolerant distributed system to manage micro-transactions at scale. Exploring advanced message queuing and event-driven architectures.",
+    tags: ["Distributed Systems", "Architecture", "R&D"],
   },
   {
-    id: "milan",
-    title: "Milan Fest '26",
-    desc: "Event scale web infrastructure and registration routing backend.",
-    tags: ["Next.js", "MongoDB"],
+    id: "neuro",
+    title: "NeuroTrack",
+    desc: "Full-stack mental wellness dashboard using Next.js and Tailwind CSS with AI backend using FastAPI and LangChain for RAG pipeline semantic journal search.",
+    tags: ["FastAPI", "React", "AI"],
+    githubUrl: "https://github.com/pd241008/NeuroTrack",
   },
   {
-    id: "harmony",
-    title: "HarmonyHub",
-    desc: "Java-based playlist management system using MVC architecture.",
-    tags: ["Java", "MVC"],
+    id: "ai-tictactoe",
+    title: "AI-TicTacToe",
+    desc: "A Tic-Tac-Toe game powered by AI, built with Next.js using a minimax algorithm to make mathematically optimal moves.",
+    tags: ["TypeScript", "Next.js", "Algorithms"],
+    githubUrl: "https://github.com/pd241008/AI-TicTacToe",
   },
+  {
+    id: "roadmap",
+    title: "RoadMap Generator",
+    desc: "An AI-based roadmap generator built with TypeScript that dynamically creates curated learning paths for various technical and non-technical disciplines.",
+    tags: ["AI", "TypeScript", "Next.js"],
+    githubUrl: "https://github.com/pd241008/RoadMap-Genrator",
+  },
+  {
+    id: "color",
+    title: "Color Palette Generator",
+    desc: "A responsive Next.js and Tailwind CSS web application that generates beautiful, cohesive color palettes instantly based on a single user-selected base color.",
+    tags: ["Next.js", "Tailwind CSS"],
+    githubUrl: "https://github.com/pd241008/Color-Palate-Generator",
+  }
 ];
 
 export default function ArchiveTab() {
@@ -214,6 +249,43 @@ export default function ArchiveTab() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* COMM-LINK SECTION */}
+      <section className="space-y-6 pt-12 border-t border-purple-500/30">
+        <h3 className="text-purple-500 flex items-center gap-2 font-bold tracking-widest uppercase text-sm">
+          <span className="text-purple-400 font-bold animate-pulse text-xl">⚠️</span> ESTABLISH COMM-LINK
+        </h3>
+        
+        <SystemCard title="WARNING: UNVERIFIED CONNECTION DETECTED">
+          <div className="p-6 md:p-10 bg-zinc-950 flex flex-col gap-8">
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed max-w-2xl border-l-2 border-amber-500/50 pl-4 py-2 bg-amber-500/5">
+              &quot;Looking to collaborate on scalable backend systems, AI integrations, or open-source tooling? The network is always open for other engineers and recruiters. Initialize a secure channel to discuss projects, architectural designs, or job opportunities.&quot;
+            </p>
+            
+            <div className="flex flex-col gap-4 font-mono text-xs md:text-sm">
+              <a href="mailto:prathmeshpdesai@gmail.com" className="group flex items-center gap-4 p-3 bg-zinc-900/50 hover:bg-purple-900/20 border border-zinc-800 hover:border-purple-500/50 transition-all cursor-pointer rounded-sm w-fit">
+                <span className="text-zinc-500 group-hover:text-purple-400 transition-colors">[Execute Email Protocol]</span>
+                <span className="text-purple-300 group-hover:text-purple-100 transition-colors">-&gt; prathmeshpdesai@gmail.com</span>
+              </a>
+              
+              <a href="https://linkedin.com/in/pd241008" target="_blank" rel="noreferrer" className="group flex items-center gap-4 p-3 bg-zinc-900/50 hover:bg-purple-900/20 border border-zinc-800 hover:border-purple-500/50 transition-all cursor-pointer rounded-sm w-fit">
+                <span className="text-zinc-500 group-hover:text-purple-400 transition-colors">[Open LinkedIn Uplink]</span>
+                <span className="text-purple-300 group-hover:text-purple-100 transition-colors">-&gt; linkedin.com/in/pd241008</span>
+              </a>
+              
+              <a href="https://github.com/pd241008" target="_blank" rel="noreferrer" className="group flex items-center gap-4 p-3 bg-zinc-900/50 hover:bg-purple-900/20 border border-zinc-800 hover:border-purple-500/50 transition-all cursor-pointer rounded-sm w-fit">
+                <span className="text-zinc-500 group-hover:text-purple-400 transition-colors">[Access GitHub Database]</span>
+                <span className="text-purple-300 group-hover:text-purple-100 transition-colors">-&gt; github.com/pd241008</span>
+              </a>
+              
+              <a href="tel:+919923464748" className="group flex items-center gap-4 p-3 bg-zinc-900/50 hover:bg-purple-900/20 border border-zinc-800 hover:border-purple-500/50 transition-all cursor-pointer rounded-sm w-fit">
+                <span className="text-zinc-500 group-hover:text-purple-400 transition-colors">[Direct Node Ping]</span>
+                <span className="text-purple-300 group-hover:text-purple-100 transition-colors">-&gt; +91 9923464748</span>
+              </a>
+            </div>
+          </div>
+        </SystemCard>
       </section>
     </div>
   );

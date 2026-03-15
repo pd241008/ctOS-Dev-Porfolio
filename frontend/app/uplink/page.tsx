@@ -75,12 +75,6 @@ export default function UplinkPage() {
       href: "https://linkedin.com/in/pd241008",
       icon: "🌐",
     },
-    {
-      label: "DIRECT_NODE_PING",
-      val: "+91 9923464748",
-      href: "tel:+919923464748",
-      icon: "🛰️",
-    },
   ];
 
   return (

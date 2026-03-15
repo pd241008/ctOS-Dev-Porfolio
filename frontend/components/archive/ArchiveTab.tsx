@@ -212,7 +212,7 @@ export default function ArchiveTab() {
               className="cursor-pointer group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-500" />
               <SystemCard
-                title={`ARCHIVE_NODE // 0${MAJOR_PROJECTS.indexOf(project) + 1}`}>
+                title="ARCHIVE_NODE">
                 <div className="p-8 bg-zinc-950 flex flex-col min-h-[300px] border-b-2 border-transparent group-hover:border-purple-500 transition-all">
                   <div className="flex justify-between items-start mb-6">
                     <div>

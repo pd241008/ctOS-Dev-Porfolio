@@ -29,9 +29,17 @@ export function getPrompt(cwd: string[]): string {
 
 // ─── Hidden commands (excluded from help) ────────────────────────
 const hiddenCommands = new Set([
-  "oh-captain-my-captain",
-  "whats-in-the-box",
+
+
   "sudo",
+  "matrix",
+  "hack",
+  "coffee",
+  "life",
+  "valedictory",
+  "neofetch",
+  "bloom",
+  "dedsec",
 ]);
 
 // ─── Command Registry ───────────────────────────────────────────
@@ -217,9 +225,9 @@ export const commandRegistry: Record<string, CommandHandler> = {
     if (!archiveDir || archiveDir.type !== "dir") {
       return [...ctx.history, "Error: archive directory not found"];
     }
-    const projects = Object.keys(archiveDir.children).map((name, i) => {
+    const projects = Object.keys(archiveDir.children).map((name) => {
       const displayName = name.replace(/\.txt$/, "");
-      return `  ${i + 1}. ${displayName}`;
+      return `  - ${displayName}`;
     });
     return [
       ...ctx.history,
@@ -279,6 +287,130 @@ export const commandRegistry: Record<string, CommandHandler> = {
       "",
       `  sudo: ${args[0] || "???"}: permission denied`,
       "  Nice try though 😏",
+      "",
+    ];
+  },
+
+  matrix: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "0 1 0 1 1 0 1 0 1 1 0 1 0 1 1 0",
+    "1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1",
+    "0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0",
+    "1 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1",
+    "",
+    "Wake up, Neo...",
+    "The Matrix has you.",
+    "",
+    "Follow the white rabbit. 🐇",
+    "",
+  ],
+
+  hack: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "[RUNNING] Scanning nearby devices...",
+    "[FOUND] ctOS_CENTRAL_HUB_#042",
+    "[STATUS] Injecting payload into node...",
+    "         [████████████████████] 100%",
+    "[SUCCESS] Root access established.",
+    "[WARN] Breach detected by Bloom. Masking IP...",
+    "",
+  ],
+
+  coffee: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "Brewing fresh code...",
+    "☕ [--------------------] 0%",
+    "☕ [##########----------] 50%",
+    "☕ [####################] 100%",
+    "",
+    "ERROR: User is already over-caffeinated.",
+    "Aborting brew sequence.",
+    "",
+  ],
+
+  life: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "Processing Answer to the Ultimate Question of Life, the Universe, and Everything...",
+    "",
+    "  42",
+    "",
+    "...but what was the question?",
+    "",
+  ],
+
+  valedictory: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "╔══════════════════════════════════════════════╗",
+    "║          VALEDICTORY RECOGNITION             ║",
+    "╚══════════════════════════════════════════════╝",
+    "",
+    "  Awarded to: Anishma Anilkumar",
+    "  Status: VALEDICTORY GUEST",
+    "  Citation: For excellence in leadership and academics.",
+    "",
+  ],
+
+  neofetch: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "       _   ___  ____      ",
+    "      / | / _ \\/ ___|     OS: Prathmesh_OS v2.0 (ctOS based)",
+    "     |  || | | \\___ \\     Host: Developer Portfolio Terminal",
+    "     |  || |_| |___) |    Kernel: 5.15.0-v7-hackers-edition",
+    "     |_/ \\___/|____/      Uptime: 2,410 hours",
+    "                          Packages: 1337 (hacks)",
+    "                          Shell: cto-sh 1.2.0",
+    "                          Resolution: 1920x1080",
+    "                          Terminal: Web_Terminal_v4",
+    "                          CPU: Neuro-Link i9 (16) @ 5.000GHz",
+    "                          GPU: Dedicated Neural Renderer",
+    "                          Memory: 32GiB / 64GiB",
+    "",
+  ],
+
+  bloom: (_args, ctx) => [
+    ...ctx.history,
+    "",
+    "WARNING: ENCRYPTED CHANNEL DETECTED",
+    "BLOOM CORPORATION INTERNAL MEMO",
+    "---------------------------------",
+    "Subject: Monitoring of node @ctos-dev",
+    "",
+    "Target 'Prathmesh Desai' is being monitored.",
+    "Do not engage. Observe and report all commits.",
+    "",
+    "EVERYTHING IS CONNECTED.",
+    "",
+  ],
+
+  dedsec: (_args, ctx) => {
+    if (ctx.triggerGlitch) {
+      ctx.triggerGlitch();
+    }
+    return [
+      ...ctx.history,
+      "",
+      "DEDSEC BACKDOOR ACCESSED.",
+      "UPLOADING EXPLOIT PAYLOADS:",
+      "",
+      "> strings",
+      "[SYSTEM] EXTRACTING HIDDEN ALIASES...",
+      "-----------------------------------",
+      "> sudo",
+      "> matrix",
+      "> hack",
+      "> coffee",
+      "> neofetch",
+      "> bloom",
+      "> whats in the box",
+      "> oh captain my captain",
+      "-----------------------------------",
+      "[SYSTEM] END OF FILE",
       "",
     ];
   },

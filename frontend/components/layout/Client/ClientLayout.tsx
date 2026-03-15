@@ -20,6 +20,13 @@ export default function ClientLayout({
   // Virtual filesystem CWD — defaults to /home
   const [cwd, setCwd] = useState<string[]>(["home"]);
 
+  const [isGlitching, setIsGlitching] = useState(false);
+
+  const triggerGlitch = () => {
+    setIsGlitching(true);
+    setTimeout(() => setIsGlitching(false), 2000);
+  };
+
   const handleSetViewMode = (mode: "terminal" | "gui") => {
     if (viewMode === "gui" && mode === "terminal") {
       setTerminalHistory(INITIAL_BOOT_SEQUENCE);
@@ -29,7 +36,7 @@ export default function ClientLayout({
   };
 
   return (
-    <div className="min-h-screen w-full relative bg-zinc-950 bg-[radial-gradient(#3b0764_1px,transparent_1px)] bg-size:24px_24px">
+    <div className={`min-h-screen w-full relative bg-zinc-950 bg-[radial-gradient(#3b0764_1px,transparent_1px)] bg-size:24px_24px ${isGlitching ? "animate-glitch" : ""}`}>
       <ToggleDashboard
         viewMode={viewMode}
         setViewMode={handleSetViewMode}
@@ -37,6 +44,8 @@ export default function ClientLayout({
         setTerminalHistory={setTerminalHistory}
         cwd={cwd}
         setCwd={setCwd}
+        isGlitching={isGlitching}
+        triggerGlitch={triggerGlitch}
       >
         {children}
       </ToggleDashboard>

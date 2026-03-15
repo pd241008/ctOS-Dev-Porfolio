@@ -26,6 +26,37 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
   }
+
+  .animate-glitch {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  }
+
+  .animate-glitch-intense {
+    animation: glitch-intense 0.2s cubic-bezier(.25, .46, .45, .94) both infinite;
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-intense {
+  0% { clip-path: inset(10% 0 30% 0); transform: translate(-5px, -5px); filter: hue-rotate(90deg); }
+  10% { clip-path: inset(40% 0 10% 0); transform: translate(5px, 5px); filter: hue-rotate(-90deg); }
+  20% { clip-path: inset(20% 0 50% 0); transform: translate(-8px, 2px); filter: brightness(1.5); }
+  30% { clip-path: inset(70% 0 5% 0); transform: translate(8px, -2px); filter: contrast(2); }
+  40% { clip-path: inset(5% 0 80% 0); transform: translate(-10px, 0px); }
+  50% { clip-path: inset(50% 0 20% 0); transform: translate(10px, 0px); }
+  60% { clip-path: inset(15% 0 60% 0); transform: translate(-5px, 5px); }
+  70% { clip-path: inset(60% 0 15% 0); transform: translate(5px, -5px); }
+  80% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 2px); }
+  90% { clip-path: inset(40% 0 30% 0); transform: translate(2px, -2px); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0); }
 }
 /* Custom Cyberpunk Scrollbar */
 ::-webkit-scrollbar {

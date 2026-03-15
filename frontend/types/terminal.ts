@@ -21,6 +21,7 @@ export interface TerminalContext {
   onMinimize: () => void;
   router: { push: (path: string) => void };
   currentPath: string;
+  triggerGlitch?: () => void;
 }
 
 export type CommandHandler = (

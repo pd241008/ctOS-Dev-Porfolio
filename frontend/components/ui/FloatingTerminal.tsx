@@ -97,6 +97,28 @@ function TerminalLine({ line }: { line: string }) {
     );
   }
 
+  // DedSec / Hack lines
+  if (line.includes("DEDSEC BACKDOOR") || line.includes("EXPLOIT PAYLOADS")) {
+    return (
+      <div className="text-red-500 font-bold animate-pulse tracking-tighter">
+        {line}
+      </div>
+    );
+  }
+
+  if (line.startsWith("> ") || (line.startsWith("[SYSTEM]") && !line.startsWith("[OK]"))) {
+    return (
+      <div className="flex gap-2 font-bold">
+        <span className="text-red-600">{line.slice(0, 1) === ">" ? ">" : ""}</span>
+        <span className="text-zinc-100">{line.slice(line.startsWith("> ") ? 2 : 0)}</span>
+      </div>
+    );
+  }
+
+  if (line === "-----------------------------------") {
+    return <div className="text-zinc-700">{line}</div>;
+  }
+
   // Default
   return <div className="text-purple-400 opacity-90">{line}</div>;
 }
@@ -109,6 +131,8 @@ interface FloatingTerminalProps {
   setHistory: React.Dispatch<React.SetStateAction<string[]>>;
   cwd: string[];
   setCwd: (path: string[]) => void;
+  isGlitching: boolean;
+  triggerGlitch: () => void;
 }
 
 export default function FloatingTerminal({
@@ -118,6 +142,8 @@ export default function FloatingTerminal({
   setHistory,
   cwd,
   setCwd,
+  isGlitching,
+  triggerGlitch,
 }: FloatingTerminalProps) {
   const [input, setInput] = useState("");
   const [cursorPos, setCursorPos] = useState(0);
@@ -176,13 +202,14 @@ export default function FloatingTerminal({
           setInput(val);
           setCursorPos(0);
         },
-        switchToGui,
         onMinimize,
         router,
         currentPath,
+        switchToGui,
+        triggerGlitch,
       });
     },
-    [input, cwd, setCwd, history, setHistory, switchToGui, onMinimize, router, currentPath],
+    [input, cwd, setCwd, history, setHistory, switchToGui, onMinimize, router, currentPath, triggerGlitch],
   );
 
   // ── Keyboard navigation (arrows + tab) ────────────────────────
@@ -296,8 +323,9 @@ export default function FloatingTerminal({
       title="ctOS // TERMINAL"
       onMinimize={onMinimize}
       onClose={switchToGui}
+      isGlitching={isGlitching}
     >
-      <div className="h-112 max-h-[80vh] bg-zinc-950/95 backdrop-blur-md p-4 flex flex-col font-mono text-sm border-t border-purple-500/50">
+      <div className={`h-112 max-h-[80vh] bg-zinc-950/95 backdrop-blur-md p-4 flex flex-col font-mono text-sm border-t border-purple-500/50 ${isGlitching ? "animate-glitch-intense" : ""}`}>
         {/* ── Output area ──────────────────────────────────────── */}
         <div className="flex-1 overflow-y-auto space-y-0.5 mb-4 scrollbar-thin scrollbar-thumb-purple-500 pr-2">
           {history.map((line, i) => {

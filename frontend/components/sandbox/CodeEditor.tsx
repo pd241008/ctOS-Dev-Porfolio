@@ -25,18 +25,6 @@ export default function CodeEditor({
 
   return (
     <div className="flex-1 flex overflow-hidden relative">
-      {/* Line numbers */}
-      <div
-        ref={lineNumbersRef}
-        className="w-10 shrink-0 bg-zinc-950 text-zinc-600 text-[11px] font-mono text-right pr-2 pt-3 pb-3 overflow-hidden select-none border-r border-purple-500/20"
-      >
-        {lines.map((_, i) => (
-          <div key={i} className="leading-5 h-5">
-            {i + 1}
-          </div>
-        ))}
-      </div>
-
       {/* Editor area */}
       <div className="flex-1 relative">
         {locked && (

@@ -13,6 +13,8 @@ interface DashboardProps {
   setTerminalHistory: React.Dispatch<React.SetStateAction<string[]>>;
   cwd: string[];
   setCwd: (path: string[]) => void;
+  isGlitching: boolean;
+  triggerGlitch: () => void;
 }
 
 export default function ToggleDashboard({
@@ -23,6 +25,8 @@ export default function ToggleDashboard({
   setTerminalHistory,
   cwd,
   setCwd,
+  isGlitching,
+  triggerGlitch,
 }: DashboardProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isTerminalMinimized, setIsTerminalMinimized] = useState(false);
@@ -42,12 +46,12 @@ export default function ToggleDashboard({
         <div
           className={`h-20 border-b-2 border-purple-500/30 flex items-center ${isCollapsed ? "justify-center" : "justify-between px-6"}`}>
           {!isCollapsed && (
-            <div className="overflow-hidden">
-              <h1 className="text-2xl font-bold text-purple-400 tracking-widest drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
-                ctOS
+            <div className={`overflow-hidden ${isGlitching ? "animate-glitch" : ""}`}>
+              <h1 className={`text-2xl font-bold tracking-widest drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] ${isGlitching ? "text-red-500 animate-pulse" : "text-purple-400"}`}>
+                {isGlitching ? "DEDSEC" : "ctOS"}
               </h1>
-              <p className="text-[10px] text-purple-500 mt-1 uppercase tracking-widest whitespace-nowrap">
-                v2.0 // Core
+              <p className={`text-[10px] mt-1 uppercase tracking-widest whitespace-nowrap ${isGlitching ? "text-red-600" : "text-purple-500"}`}>
+                {isGlitching ? "EXPLOIT LOADED" : "v2.0 // Core"}
               </p>
             </div>
           )}
@@ -120,11 +124,13 @@ export default function ToggleDashboard({
                 <FloatingTerminal
                   switchToGui={() => setViewMode("gui")}
                   onMinimize={() => setIsTerminalMinimized(true)}
-                  history={terminalHistory}
-                  setHistory={setTerminalHistory}
-                  cwd={cwd}
-                  setCwd={setCwd}
-                />
+                   history={terminalHistory}
+                   setHistory={setTerminalHistory}
+                   cwd={cwd}
+                   setCwd={setCwd}
+                   isGlitching={isGlitching}
+                   triggerGlitch={triggerGlitch}
+                 />
               </div>
             </motion.div>
           )}

@@ -74,11 +74,11 @@ export default function Page() {
               </div>
             </SystemCard>
           </div>
-          
+
           {/* GITHUB INTEL - Wide Block (4/6) */}
           <div className="lg:col-span-4 group transition-transform duration-300 flex flex-col">
             <SystemCard title="NODE: GITHUB_INTEL">
-              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-[400px] h-full group-hover:bg-purple-900/5 transition-colors">
+              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-400px h-full group-hover:bg-purple-900/5 transition-colors">
                 <GithubIntel />
               </div>
             </SystemCard>
@@ -98,7 +98,7 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
           <div className="lg:col-span-4 group transition-transform duration-300 flex flex-col">
             <SystemCard title="NODE: PRODUCTION_TELEMETRY">
-              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-[300px] h-full group-hover:bg-purple-900/5 transition-colors">
+              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-300px h-full group-hover:bg-purple-900/5 transition-colors">
                 <ProductionTelemetry />
               </div>
             </SystemCard>
@@ -106,7 +106,7 @@ export default function Page() {
 
           <div className="lg:col-span-2 group flex flex-col">
             <SystemCard title="NODE: UPLINK_COMMITS">
-              <div className="bg-zinc-950/40 h-full flex flex-col min-h-[300px] max-h-[400px] overflow-hidden group-hover:bg-purple-900/5 transition-colors">
+              <div className="bg-zinc-950/40 h-full flex flex-col min-h-300px max-h-400px overflow-hidden group-hover:bg-purple-900/5 transition-colors">
                 <LiveCommits />
               </div>
             </SystemCard>

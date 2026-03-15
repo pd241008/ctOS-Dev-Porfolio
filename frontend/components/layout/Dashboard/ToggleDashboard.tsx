@@ -11,6 +11,8 @@ interface DashboardProps {
   setViewMode: (mode: "terminal" | "gui") => void;
   terminalHistory: string[];
   setTerminalHistory: React.Dispatch<React.SetStateAction<string[]>>;
+  cwd: string[];
+  setCwd: (path: string[]) => void;
 }
 
 export default function ToggleDashboard({
@@ -19,6 +21,8 @@ export default function ToggleDashboard({
   setViewMode,
   terminalHistory,
   setTerminalHistory,
+  cwd,
+  setCwd,
 }: DashboardProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isTerminalMinimized, setIsTerminalMinimized] = useState(false);
@@ -118,6 +122,8 @@ export default function ToggleDashboard({
                   onMinimize={() => setIsTerminalMinimized(true)}
                   history={terminalHistory}
                   setHistory={setTerminalHistory}
+                  cwd={cwd}
+                  setCwd={setCwd}
                 />
               </div>
             </motion.div>

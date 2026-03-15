@@ -102,7 +102,7 @@ export default function ArchiveTab() {
           <span className="group-hover:-translate-x-1 transition-transform">
             ⋘
           </span>{" "}
-          [ BACK_TO_ARCHIVES ]
+          [ BACK_TO_ARCHIVE ]
         </button>
 
         <SystemCard
@@ -182,7 +182,7 @@ export default function ArchiveTab() {
       <header className="border-b-2 border-purple-500/40 pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 relative group">
         <div>
           <h2 className="text-3xl md:text-5xl font-black text-purple-400 tracking-[0.2em] uppercase mb-1 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
-            Archive_Nodes
+            Archive_Node
           </h2>
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 bg-purple-500 animate-pulse rounded-full" />

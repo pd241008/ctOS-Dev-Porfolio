@@ -116,7 +116,6 @@ export const commandRegistry: Record<string, CommandHandler> = {
       overview: "/",
       "~": "/",
       "/": "/",
-      archives: "/archive",
       archive: "/archive",
       "/archive": "/archive",
       sandbox: "/sandbox",
@@ -131,9 +130,8 @@ export const commandRegistry: Record<string, CommandHandler> = {
       overview: ["home"],
       "~": ["home"],
       "/": [],
-      archives: ["archives"],
-      archive: ["archives"],
-      "/archive": ["archives"],
+      archive: ["archive"],
+      "/archive": ["archive"],
       sandbox: ["sandbox"],
       "/sandbox": ["sandbox"],
       uplink: ["uplink"],
@@ -213,11 +211,11 @@ export const commandRegistry: Record<string, CommandHandler> = {
 
   // ── projects ─────────────────────────────────────────────────
   projects: (_args, ctx) => {
-    const archivesDir = filesystem.children.archives;
-    if (!archivesDir || archivesDir.type !== "dir") {
-      return [...ctx.history, "Error: archives directory not found"];
+    const archiveDir = filesystem.children.archive;
+    if (!archiveDir || archiveDir.type !== "dir") {
+      return [...ctx.history, "Error: archive directory not found"];
     }
-    const projects = Object.keys(archivesDir.children).map((name, i) => {
+    const projects = Object.keys(archiveDir.children).map((name, i) => {
       const displayName = name.replace(/\.txt$/, "");
       return `  ${i + 1}. ${displayName}`;
     });
@@ -230,7 +228,7 @@ export const commandRegistry: Record<string, CommandHandler> = {
       "",
       ...projects,
       "",
-      "  Use 'cd archives' then 'cat <name>.txt' to view details.",
+      "  Use 'cd archive' then 'cat <name>.txt' to view details.",
       "",
     ];
   },

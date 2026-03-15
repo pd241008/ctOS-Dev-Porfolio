@@ -52,7 +52,7 @@ export const filesystem: FSDir = {
       },
     },
 
-    archives: {
+    archive: {
       type: "dir",
       children: {
         "expresskit.txt": {
@@ -217,7 +217,7 @@ export const filesystem: FSDir = {
 };
 
 /**
- * Resolve a path array (e.g. ["archives"]) against the filesystem root.
+ * Resolve a path array (e.g. ["archive"]) against the filesystem root.
  * Returns the FSNode at that path, or null if not found.
  */
 export function resolvePath(

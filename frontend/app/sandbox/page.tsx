@@ -195,12 +195,16 @@ export default function SandboxPage() {
 
                 <div className="pt-8 border-t border-purple-500/20 flex gap-6">
                   <a
-                    href="#"
+                    href="https://www.npmjs.com/package/@pd241008/expresskit"
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-[11px] font-black text-purple-300 hover:text-white transition-colors uppercase tracking-[0.2em]">
                     [ VIEW_ON_NPM ]
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/pd241008/ExpressKit#readme"
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-[11px] font-black text-zinc-500 hover:text-white transition-colors uppercase tracking-[0.2em]">
                     [ DOCUMENTATION ]
                   </a>

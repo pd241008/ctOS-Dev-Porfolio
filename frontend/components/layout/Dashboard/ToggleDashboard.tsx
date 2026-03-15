@@ -66,9 +66,9 @@ export default function ToggleDashboard({
             isCollapsed={isCollapsed}
           />
           <NavButton
-            label="ARCHIVES"
+            label="ARCHIVE"
             icon="[A]"
-            href="/archives"
+            href="/archive"
             isCollapsed={isCollapsed}
           />
           <NavButton

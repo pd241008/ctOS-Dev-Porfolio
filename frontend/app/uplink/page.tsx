@@ -279,7 +279,7 @@ export default function UplinkPage() {
         <button
           onClick={() => router.back()}
           className="px-8 py-2 text-[11px] font-black uppercase tracking-[0.3em] bg-zinc-950 border border-zinc-800 text-zinc-600 hover:border-purple-500/50 hover:text-purple-400 transition-all">
-          ⋘ Return_To_Archives
+          ⋘ Return_To_Archive
         </button>
       </div>
     </div>

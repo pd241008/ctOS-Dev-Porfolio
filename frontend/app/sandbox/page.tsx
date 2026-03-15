@@ -132,12 +132,12 @@ export default function SandboxPage() {
         <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 to-transparent translate-x--100% group-hover:translate-x-100% transition-transform duration-1000" />
         <div>
           <h2 className="text-3xl md:text-5xl font-black text-purple-400 tracking-[0.2em] uppercase mb-1 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
-            Innovation_Lab
+            Innovation Lab // Sandbox
           </h2>
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 bg-purple-500 animate-pulse rounded-full" />
             <p className="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">
-              {/* Experimental_SandBox // Tooling_Intelligence */}
+              Experimental Builds, R&D & Unreleased Architecture
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default function SandboxPage() {
           {/* Block 2: Live Sim / Terminal */}
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-linear-to-r from-green-600 to-emerald-600 rounded-sm blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-            <SystemCard title="LIVE_SIMULATION // ENV_SANDBOX">
+            <SystemCard title="LIVE_SIMULATION // THE_SANDBOX">
               <div className="flex flex-col bg-zinc-950/90 h-450px">
                 <div className="p-4 border-b border-white/5 flex justify-between items-center bg-zinc-900/40">
                   <span className="text-[10px] text-zinc-500 uppercase font-mono">

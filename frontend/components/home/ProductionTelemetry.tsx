@@ -2,7 +2,7 @@
 
 export default function ProductionTelemetry() {
   return (
-    <div className="p-5 bg-zinc-950 flex flex-col gap-4 font-mono h-full justify-center">
+    <div className="p-5 bg-zinc-950 flex flex-col gap-4 font-mono">
       <div className="text-sm text-zinc-300 space-y-4">
         <div className="flex flex-col gap-1 border-l-2 border-purple-500/50 pl-4 bg-purple-900/10 py-2">
           <span className="text-purple-400 text-xs font-bold uppercase tracking-widest">&gt; PEAK_CONCURRENCY_HANDLED:</span>

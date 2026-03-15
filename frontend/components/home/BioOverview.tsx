@@ -11,8 +11,9 @@ export default function BioOverview() {
             Prathmesh Desai
           </h3>
 
-          <p className="text-xs text-purple-400 uppercase tracking-widest mt-1">
-            Backend-Focused Full Stack Developer
+          <p className="text-xs uppercase tracking-widest mt-1 flex flex-wrap gap-x-1">
+            <span className="text-purple-300 font-bold bg-purple-500/20 px-1">Backend-Focused</span>
+            <span className="text-purple-400/70">Full Stack Developer</span>
           </p>
           <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">
             Architecting robust backend systems, developer tooling, and scalable cloud infrastructure.

@@ -12,18 +12,21 @@ export default function Page() {
   return (
     <div className="animate-in fade-in zoom-in-95 duration-500 max-w-7xl mx-auto space-y-10 pb-12 px-4">
       {/* HEADER SECTION */}
-      <header className="space-y-2">
-        <h2 className="text-3xl md:text-4xl font-bold text-purple-300 tracking-[0.2em] uppercase drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
-          Command Center
-        </h2>
-        <div className="flex items-center gap-3 border-t border-zinc-800 pt-3">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <p className="text-zinc-500 text-[11px] font-mono uppercase tracking-widest">
-            {"// DECP KERNEL V2.4 INITIALIZED — ALL SUBSYSTEMS OPERATIONAL"}
-          </p>
+      <header className="border-b-2 border-purple-500/40 pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 relative overflow-hidden group">
+        <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 to-transparent translate-x--100% group-hover:translate-x-100% transition-transform duration-1000" />
+        <div>
+          <h2 className="text-3xl md:text-5xl font-black text-purple-400 tracking-[0.2em] uppercase mb-1 drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
+            Command_Center
+          </h2>
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <p className="text-zinc-500 text-[11px] font-mono uppercase tracking-[0.3em]">
+              Sys. Integrity: 100% | Biometrics & Production Telemetry
+            </p>
+          </div>
         </div>
       </header>
 
@@ -98,7 +101,7 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6">
           <div className="lg:col-span-4 group transition-transform duration-300 flex flex-col">
             <SystemCard title="NODE: PRODUCTION_TELEMETRY">
-              <div className="p-4 lg:p-6 bg-zinc-950/40 min-h-300px h-full group-hover:bg-purple-900/5 transition-colors">
+              <div className="p-4 lg:p-6 bg-zinc-950/40 h-full group-hover:bg-purple-900/5 transition-colors">
                 <ProductionTelemetry />
               </div>
             </SystemCard>
@@ -106,7 +109,7 @@ export default function Page() {
 
           <div className="lg:col-span-2 group flex flex-col">
             <SystemCard title="NODE: UPLINK_COMMITS">
-              <div className="bg-zinc-950/40 h-full flex flex-col min-h-300px max-h-400px overflow-hidden group-hover:bg-purple-900/5 transition-colors">
+              <div className="bg-zinc-950/40 h-full flex flex-col max-h-[350px] overflow-y-auto group-hover:bg-purple-900/5 transition-colors">
                 <LiveCommits />
               </div>
             </SystemCard>

@@ -85,7 +85,7 @@ export default function LiveCommits() {
   return (
     <div className="p-4 bg-[#0a0a0a] border border-purple-500/20 h-full font-mono text-sm overflow-y-auto">
       <div className="space-y-3">
-        <div className="text-zinc-500 opacity-70 italic mb-4">
+        <div className="text-zinc-500 opacity-70 italic mb-4 text-xs">
           {loading ? "PULLING LIVE DATA..." : "UPLINK_COMMITS // LIVE"}
         </div>
 
@@ -108,9 +108,10 @@ export default function LiveCommits() {
             }
 
             return (
-              <div key={commit.id + i} className="text-zinc-300">
+              <div key={commit.id + i} className="text-zinc-300 leading-relaxed mb-3">
                 <span className={`${statusColor} font-bold`}>[{statusTag}]</span>{" "}
-                <span className="text-purple-300">{commit.repo}</span> - &quot;{commit.message}&quot;{" "}
+                <span className="text-purple-300 font-semibold">{commit.repo}</span>{" "}-{" "}
+                &quot;{commit.message}&quot;{" "}
                 <span className="text-zinc-500">({commit.timeAgo})</span>
               </div>
             );
